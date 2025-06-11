@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Valorant Map Viewer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #121212;
+      color: white;
+      margin: 0;
+      padding: 20px;
+    }
+
+    select {
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    img {
+      width: 90%;
+      max-width: 1000px;
+      border: 4px solid #ff4655;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Valorant Map Viewer</h1>
+
+  <select id="mapSelector" onchange="switchMap()">
+    <option value="ascent">Ascent</option>
+    <option value="bind">Bind</option>
+    <option value="breeze">Breeze</option>
+    <option value="fracture">Fracture</option>
+    <option value="haven">Haven</option>
+    <option value="icebox">Icebox</option>
+    <option value="lotus">Lotus</option>
+    <option value="pearl">Pearl</option>
+    <option value="split">Split</option>
+    <option value="sunset">Sunset</option>
+  </select>
+
+  <div>
+    <img id="mapImage" src="maps/ascent.png" alt="Valorant Map">
+  </div>
+
+  <script>
+    function switchMap() {
+      const map = document.getElementById('mapSelector').value;
+      document.getElementById('mapImage').src = `maps/${map}.png`;
+    }
+  </script>
+
+</body>
+</html>
